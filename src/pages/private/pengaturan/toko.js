@@ -47,7 +47,10 @@ function Toko() {
 
     useEffect(() => {
         if (snapshot) {
-            setForm(snapshot.data())
+            setForm(currentForm => ({
+                ...currentForm,
+                ...snapshot.data()
+            }));
         }
     }, [snapshot])
 
@@ -179,4 +182,4 @@ function Toko() {
     </div>
 }
 
-export default Toko;
+export default Toko; 
